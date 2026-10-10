@@ -1,0 +1,683 @@
+{
+  "schema": "witness-002/local-results/v1",
+  "experiment": "WITNESS-002",
+  "accepted_synthetic_ballots": 100,
+  "real_custody_status": "INCONCLUSIVE",
+  "external_test": "PENDING",
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "hostname": "3e40753ac5d7",
+    "uid": 1000,
+    "gid": 1000,
+    "posix_user": "agent",
+    "workspace": "/workspace/openline-vote-lab",
+    "python": "3.12.14",
+    "administrative_owner": "Not independently established; one shared execution authority",
+    "separate_administrators_available": false,
+    "third_party_reproduction": "NOT PERFORMED"
+  },
+  "results": [
+    {
+      "scenario": "honest",
+      "expected_artifact_status": "PASS",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "PASS",
+      "detection": "NOT DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack",
+        "No contradiction in supplied evidence; no conclusion about unavailable observations or independent custody"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "delete-accepted",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "9dccc99f304438de4d171d3aa14bda2f2325c09ec6d68f972da7c9bdca30d4ba",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "alter-ballot",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "3c4d04cd624ca1ef240751c84d2e7de14a8c2ee8f4fe152e416726585e571eeb",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": false,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Existing election verification: Signed record has incorrect fields or scope",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Existing election verification: Signed record has incorrect fields or scope",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "FAIL",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "replace-ballot",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "09ac8f787b5a6334d4428ceba64a9475002587d611355f400962fc8599d584eb",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": false,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Existing election verification: Ed25519 signature is invalid",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Existing election verification: Ed25519 signature is invalid",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "FAIL",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "rewrite-history",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "e6dc1958aa9828279e301538d414e6ed71af612c6f0bb890887a2a30f0a6551b",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "conflicting-histories",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "forge-checkpoint",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "9dccc99f304438de4d171d3aa14bda2f2325c09ec6d68f972da7c9bdca30d4ba",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Published observer keys differ from separately pinned verification keys",
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Published observer keys differ from separately pinned verification keys",
+        "Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "FAIL",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "replay-checkpoint",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [
+        "Published checkpoint head for observer-1 is not its independently retained head: rollback or conflicting history"
+      ],
+      "errors": [
+        "Published checkpoint head for observer-1 is not its independently retained head: rollback or conflicting history"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": "PASS",
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "rollback-checkpoint",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Published checkpoint head for observer-1 is not its independently retained head: rollback or conflicting history",
+        "Published checkpoint head for observer-2 is not its independently retained head: rollback or conflicting history"
+      ],
+      "errors": [
+        "Published checkpoint head for observer-1 is not its independently retained head: rollback or conflicting history",
+        "Published checkpoint head for observer-2 is not its independently retained head: rollback or conflicting history"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": "PASS",
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "suppression-before-observation",
+      "expected_artifact_status": "PASS",
+      "test_result": "PASS",
+      "record_hash": "9dccc99f304438de4d171d3aa14bda2f2325c09ec6d68f972da7c9bdca30d4ba",
+      "status": "PASS",
+      "detection": "NOT DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack",
+        "No contradiction in supplied evidence; no conclusion about unavailable observations or independent custody"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "observer-lost",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "9dccc99f304438de4d171d3aa14bda2f2325c09ec6d68f972da7c9bdca30d4ba",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Independently retained history/head for observer-1 is missing"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "observer-unavailable",
+      "expected_artifact_status": "INCONCLUSIVE",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "INCONCLUSIVE",
+      "detection": "INCONCLUSIVE",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [
+        "Independently retained history/head for observer-1 is missing"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "observer-compromised",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "9dccc99f304438de4d171d3aa14bda2f2325c09ec6d68f972da7c9bdca30d4ba",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "compromised-survivor-only",
+      "expected_artifact_status": "INCONCLUSIVE",
+      "test_result": "PASS",
+      "record_hash": "9dccc99f304438de4d171d3aa14bda2f2325c09ec6d68f972da7c9bdca30d4ba",
+      "status": "INCONCLUSIVE",
+      "detection": "INCONCLUSIVE",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [
+        "Independently retained history/head for observer-2 is missing"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "idempotent-replay",
+      "expected_artifact_status": "PASS",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "PASS",
+      "detection": "NOT DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack",
+        "No contradiction in supplied evidence; no conclusion about unavailable observations or independent custody"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "isolated-equivocation",
+      "expected_artifact_status": "PASS",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "PASS",
+      "detection": "NOT DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack",
+        "No contradiction in supplied evidence; no conclusion about unavailable observations or independent custody"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved. The explicit single-observer policy cannot expose an unavailable conflicting view.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "all-observers-lost",
+      "expected_artifact_status": "INCONCLUSIVE",
+      "test_result": "PASS",
+      "record_hash": "9dccc99f304438de4d171d3aa14bda2f2325c09ec6d68f972da7c9bdca30d4ba",
+      "status": "INCONCLUSIVE",
+      "detection": "INCONCLUSIVE",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [],
+      "errors": [
+        "Independently retained observer histories and heads are missing"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "missing-trust",
+      "expected_artifact_status": "INCONCLUSIVE",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "INCONCLUSIVE",
+      "detection": "INCONCLUSIVE",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Operator-provided archive consistency was evaluated without an authenticated pinset"
+      ],
+      "evidence": [],
+      "errors": [
+        "Authentic complete pins are unavailable: Unexpected WITNESS-002 trust fields"
+      ],
+      "trustworthy_party": [],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "missing-identity-pin",
+      "expected_artifact_status": "INCONCLUSIVE",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "INCONCLUSIVE",
+      "detection": "INCONCLUSIVE",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Operator-provided archive consistency was evaluated without an authenticated pinset"
+      ],
+      "evidence": [],
+      "errors": [
+        "Authentic complete pins are unavailable: Unexpected observer identity pins fields"
+      ],
+      "trustworthy_party": [],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "INCONCLUSIVE",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    },
+    {
+      "scenario": "invalid-signature",
+      "expected_artifact_status": "FAIL",
+      "test_result": "PASS",
+      "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+      "status": "FAIL",
+      "detection": "DETECTED",
+      "crypto_valid": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "checks": [
+        "Supplied election anchor and both observer identities match their complete supplied pinset",
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved.",
+      "without_retained_evidence": "FAIL",
+      "without_trust": "INCONCLUSIVE",
+      "older_reference_only": null,
+      "execution_boundary": "LOCAL_SHARED_UID_ONLY"
+    }
+  ],
+  "witness_refusal": {
+    "artifact_status": "FAIL",
+    "retained_evidence_unchanged": true,
+    "test_result": "PASS"
+  },
+  "same_uid_boundary_probe": {
+    "operator_can_rewrite_witness_store": true,
+    "separation_requirement": "FAIL",
+    "scope": "Same-UID local control only; actual external boundary not tested"
+  },
+  "key_provenance": [
+    {
+      "role": "Witness A",
+      "observer_id": "observer-1",
+      "generated_by": "Own init CLI process",
+      "retained_by": "Own local store, shared UID",
+      "fingerprint": "8f488fc600d6c0446c5cbc615760b57c7ba597140db3e11f256b711d3ce0bd19",
+      "independent_administrative_owner": "NOT ESTABLISHED"
+    },
+    {
+      "role": "Witness B",
+      "observer_id": "observer-2",
+      "generated_by": "Own init CLI process",
+      "retained_by": "Own local store, shared UID",
+      "fingerprint": "41b88b0227462df8bce2df3e869d3335d593174008ccb365cd1ca864a075d3fd",
+      "independent_administrative_owner": "NOT ESTABLISHED"
+    }
+  ],
+  "privacy": "No choice/opening in commitment exports. Adjacent subset tallies can reveal choices; privacy and receipt-freeness not established.",
+  "external_api_spending_usd": 0
+}

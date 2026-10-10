@@ -1,0 +1,26 @@
+{
+  "status": "FAIL",
+  "detection": "DETECTED",
+  "crypto_valid": true,
+  "real_custody_status": "INCONCLUSIVE",
+  "checks": [
+    "Supplied election anchor and both observer identities match their complete supplied pinset",
+    "Separate election anchor and observer verification keys supplied",
+    "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+    "Independently retained signed histories matched separately retained head references"
+  ],
+  "evidence": [
+    "Independently retained signed closed head for observer-1 conflicts with the published archive",
+    "Independently retained signed closed head for observer-2 conflicts with the published archive"
+  ],
+  "errors": [
+    "Independently retained signed closed head for observer-1 conflicts with the published archive",
+    "Independently retained signed closed head for observer-2 conflicts with the published archive"
+  ],
+  "trustworthy_party": [
+    "Authentic separately retained election anchor and verification keys",
+    "At least one honest observer retaining the relevant observed history",
+    "Correct verifier and reused ElectionGuard/cryptography implementations"
+  ],
+  "scope": "PASS establishes consistency of supplied encrypted election evidence under the supplied pins only. Authentic external pins, independent observation, and independent custody are assumptions that this offline verifier cannot establish. Detection is not prevention or recovery; unobserved submissions, unavailable conflicting views, voter intent, and receipt-freeness remain unproved."
+}

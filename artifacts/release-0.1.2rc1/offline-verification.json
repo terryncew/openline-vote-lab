@@ -1,0 +1,42 @@
+[
+  {
+    "case": "rewrite",
+    "exit_code": 1,
+    "artifact_status": "FAIL",
+    "detection": "DETECTED",
+    "crypto_valid": true,
+    "real_custody_status": "INCONCLUSIVE",
+    "outbound_connections_blocked": true,
+    "private_store_simulator_and_server_not_imported": true
+  },
+  {
+    "case": "without-pins",
+    "exit_code": 3,
+    "artifact_status": "INCONCLUSIVE",
+    "detection": "INCONCLUSIVE",
+    "crypto_valid": true,
+    "real_custody_status": "INCONCLUSIVE",
+    "outbound_connections_blocked": true,
+    "private_store_simulator_and_server_not_imported": true
+  },
+  {
+    "case": "without-evidence",
+    "exit_code": 3,
+    "artifact_status": "INCONCLUSIVE",
+    "detection": "INCONCLUSIVE",
+    "crypto_valid": true,
+    "real_custody_status": "INCONCLUSIVE",
+    "outbound_connections_blocked": true,
+    "private_store_simulator_and_server_not_imported": true
+  },
+  {
+    "case": "honest",
+    "exit_code": 0,
+    "artifact_status": "PASS",
+    "detection": "NOT DETECTED",
+    "crypto_valid": true,
+    "real_custody_status": "INCONCLUSIVE",
+    "outbound_connections_blocked": true,
+    "private_store_simulator_and_server_not_imported": true
+  }
+]

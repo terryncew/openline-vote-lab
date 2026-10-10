@@ -1,0 +1,80 @@
+{
+  "candidate": "openline-vote-lab-0.1.1rc1",
+  "experiment": "WITNESS-001",
+  "validated_utc": "2026-10-10T19:53:24.463379+00:00",
+  "archive": "openline-vote-lab-0.1.1rc1.tar.gz",
+  "sha256": "d1456a79d3903ae19ff0f11a084f1c1f7df2443de332b7c14037fc177b41a8d4",
+  "two_unchanged_source_builds_identical": true,
+  "all_archived_source_bytes_match_working_tree_and_extraction": true,
+  "full_suite": {
+    "passed": 149,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 161.34,
+    "log": "full-tests.txt"
+  },
+  "extracted_witness_suite": {
+    "passed": 65,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 87.9,
+    "log": "packaged-witness-tests.txt"
+  },
+  "extracted_standalone_offline_checks": [
+    {
+      "case": "A",
+      "exit_code": 0,
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "outbound_connections_blocked": true,
+      "simulator_and_server_not_imported": true
+    },
+    {
+      "case": "B",
+      "exit_code": 0,
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "outbound_connections_blocked": true,
+      "simulator_and_server_not_imported": true
+    },
+    {
+      "case": "C",
+      "exit_code": 1,
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "outbound_connections_blocked": true,
+      "simulator_and_server_not_imported": true
+    },
+    {
+      "case": "C-without-evidence",
+      "exit_code": 0,
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "outbound_connections_blocked": true,
+      "simulator_and_server_not_imported": true
+    }
+  ],
+  "dependency_check": "No broken requirements found",
+  "matrix": {
+    "rows": 51,
+    "matched_records_across_conditions": true,
+    "A_and_B_identical": true,
+    "C_only_valid_archive_attack_detections": 7,
+    "file": "WITNESS-001-results.json",
+    "sha256": "8432fb60a5aa9155a069984c4ff4736f0fc932c3ff26ae32d14862f7e4f07480"
+  },
+  "historical_archive_preserved": {
+    "file": "../release/openline-vote-lab-0.1.0rc1.tar.gz",
+    "sha256": "f0d234d9001660e461c356b092c14e1ee6e15a9d67f3bc1cee0cb5bf72ff1d41"
+  },
+  "boundaries": {
+    "synthetic_only": true,
+    "genuine_external_custody_demonstrated": false,
+    "independent_security_audit_performed": false,
+    "receipt_freeness_established": false,
+    "public_deployment_or_release_publication": false,
+    "github_push": false,
+    "external_api_spending_usd": 0
+  },
+  "scope": "Detection of supplied artifact contradictions under assumed authentic independent references. Not prevention, production voting, or a new OpenLine guarantee."
+}

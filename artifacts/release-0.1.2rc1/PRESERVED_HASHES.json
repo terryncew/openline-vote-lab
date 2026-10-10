@@ -1,0 +1,16 @@
+{
+  "docs/RESEARCH.md": "572af7cd937f85ac416a64afe68049114117dae2b21a8fdcd16e94486c6bbf59",
+  "docs/RELEASE_CANDIDATE.md": "8a89a498b5ae1f6a1ce4b864ce70d0e741eab0b4fc364d81fd8c48b86a5fb813",
+  "docs/WITNESS-001.md": "fa9de1c435ce1ae84d19e5e5625850de570bbb8b8d93698e1d96d80145329e39",
+  "docs/WITNESS-001-RELEASE.md": "73193967813850b3f3cd4de69421fc661737e28cfdf2cc841c13088012190c2c",
+  "vote_lab/crypto.py": "1f9f074d73f01254fcf5310697144eb66153c0403da8bb7f144cf534a0e752dc",
+  "vote_lab/verification.py": "7f40bb295fe982f640a5bbc711ba16fd60f116d194860237a9657d4c99b7bece",
+  "vote_lab/records.py": "5e7a7c5b18c9965652d1551c3ea606717f1995d493b11a47317ba317ad48c1f1",
+  "vote_lab/model.py": "3296eb298e84ce4e622b9ed500072299cf3895396b4a954ef34bc4f83d5f353c",
+  "vote_lab/witness.py": "221cd9f3b409bcccb6bffad553dec0f59c882e0333765e30ee092a00831e01a0",
+  "vote_lab/witness_verify.py": "23a983fd23c563fbcae5bd4b33ea294ee45a9b0c046747c6067392447d4f0b87",
+  "vote_lab/__main__.py": "061bf0359dce366ae3ce3e6a9a444bccb93c8895cb85701d448b52cc51f68fb8",
+  "artifacts/release/openline-vote-lab-0.1.0rc1.tar.gz": "f0d234d9001660e461c356b092c14e1ee6e15a9d67f3bc1cee0cb5bf72ff1d41",
+  "artifacts/release-0.1.1rc1/openline-vote-lab-0.1.1rc1.tar.gz": "d1456a79d3903ae19ff0f11a084f1c1f7df2443de332b7c14037fc177b41a8d4",
+  "artifacts/release-0.1.1rc1/VALIDATION.json": "6afb0b64bdf6e4d5287db36c2a5a014d082fe2b34dea219d374112d832ea9510"
+}

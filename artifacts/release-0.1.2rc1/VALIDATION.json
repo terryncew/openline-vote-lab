@@ -1,0 +1,202 @@
+{
+  "all_archived_source_bytes_match_working_tree_extraction_and_source_commit": true,
+  "archive": "openline-vote-lab-0.1.2rc1.tar.gz",
+  "boundaries": {
+    "actual_independent_custody_demonstrated": false,
+    "external_api_spending_usd": 0,
+    "independent_security_audit_performed": false,
+    "public_deployment_release_publication_or_github_push": false,
+    "receipt_freeness_established": false,
+    "synthetic_only": true
+  },
+  "candidate": "openline-vote-lab-0.1.2rc1",
+  "collated_utc": "2026-10-10T21:14:24.510543+00:00",
+  "deterministic_rebuild_check": {
+    "reason": "Earlier two-build agreement was reported, but no separate retained build log or second archive survives. Recovery did not rebuild or replace the existing archive.",
+    "status": "INCONCLUSIVE"
+  },
+  "excluded_from_git": [
+    "artifacts/witness-002-local/local-role-stores/",
+    ".venv/",
+    "caches and bytecode",
+    "other generated election/ballot exports and operator state",
+    "private keys and credentials"
+  ],
+  "existing_archive_and_checksum_preserved_without_rebuild": true,
+  "experiment": "WITNESS-002",
+  "external_test": "PENDING",
+  "extracted_custody_suite": {
+    "failed": 0,
+    "historical_process_exit_status_retained": false,
+    "log": "packaged-custody-tests.txt",
+    "passed": 139,
+    "provenance": "surviving local pytest summary; not rerun in recovery",
+    "seconds": 78.12,
+    "skipped": 0
+  },
+  "extracted_standalone_offline_checks": [
+    {
+      "artifact_status": "FAIL",
+      "case": "rewrite",
+      "crypto_valid": true,
+      "detection": "DETECTED",
+      "exit_code": 1,
+      "outbound_connections_blocked": true,
+      "private_store_simulator_and_server_not_imported": true,
+      "real_custody_status": "INCONCLUSIVE"
+    },
+    {
+      "artifact_status": "INCONCLUSIVE",
+      "case": "without-pins",
+      "crypto_valid": true,
+      "detection": "INCONCLUSIVE",
+      "exit_code": 3,
+      "outbound_connections_blocked": true,
+      "private_store_simulator_and_server_not_imported": true,
+      "real_custody_status": "INCONCLUSIVE"
+    },
+    {
+      "artifact_status": "INCONCLUSIVE",
+      "case": "without-evidence",
+      "crypto_valid": true,
+      "detection": "INCONCLUSIVE",
+      "exit_code": 3,
+      "outbound_connections_blocked": true,
+      "private_store_simulator_and_server_not_imported": true,
+      "real_custody_status": "INCONCLUSIVE"
+    },
+    {
+      "artifact_status": "PASS",
+      "case": "honest",
+      "crypto_valid": true,
+      "detection": "NOT DETECTED",
+      "exit_code": 0,
+      "outbound_connections_blocked": true,
+      "private_store_simulator_and_server_not_imported": true,
+      "real_custody_status": "INCONCLUSIVE"
+    }
+  ],
+  "files_sha256": {
+    "PRESERVED_HASHES.json": "69e1ca890a10720d07ba995d49323b6ec11ce40b4376c9d9a32d39cdd18b4197",
+    "RECOVERY.md": "11f55b91199ddb7bbc6ebfa450ac28828d0c78b999cd73751c1617d52d52b1e7",
+    "SOURCE_HASHES.json": "5404daeb82bf32bb64ef243945c95e71c32c0b2ee772e683715f31fa5c7bd2d3",
+    "WITNESS-002-results.json": "6468dd47fc4adae604b8d09ab16f452ef32f3c997aa76a5f77a96a5edb811129",
+    "full-tests.txt": "d77ec24d6ce67f304d8edf564cc388eadb1d0c8317410af6dffb6e5dabe8ef99",
+    "offline-verification.json": "0b2d0be5a0d71735d0b124f8174cf6e17c63d741c17804a8238a508aa642395b",
+    "offline/pinned-trust.json": "f7a1da842ddb10ce1fdfed99c517b2f044beea9a52f3bebf2ac67999b176abb3",
+    "offline/publication.json": "3b7aef847205fd2c639487a7dac41c897312e2c52b2807b325f450ffb7569522",
+    "offline/witness-1-evidence.json": "3fd8ed49949d87b73e6f97b1c792fcddd59b5d81ae2a976252473412e43bdc8d",
+    "offline/witness-2-evidence.json": "8237c13fd08e43634871ff7fa026348cd8c2696ff3f8b9195803649618d5fa09",
+    "packaged-custody-tests.txt": "151339c8f22fab49de822ae10425cec6846ede746d22b96e8c6e8932407e2310",
+    "recovery-offline-check.py": "ff4a82ff0a2aa9d18a02eb7244655f88ec6104467d8ce27af05b98903fdd1629",
+    "recovery-offline-output.json": "363fb685332cf649ed3c61a099c6436f180881e4b99b4987287b8c5f5610340a"
+  },
+  "files_size_bytes": {
+    "PRESERVED_HASHES.json": 1422,
+    "RECOVERY.md": 2792,
+    "SOURCE_HASHES.json": 6909,
+    "WITNESS-002-results.json": 39814,
+    "full-tests.txt": 352,
+    "offline-verification.json": 1176,
+    "offline/pinned-trust.json": 31195,
+    "offline/publication.json": 3046232,
+    "offline/witness-1-evidence.json": 1592,
+    "offline/witness-2-evidence.json": 1592,
+    "packaged-custody-tests.txt": 191,
+    "recovery-offline-check.py": 634,
+    "recovery-offline-output.json": 1590
+  },
+  "full_suite": {
+    "failed": 0,
+    "historical_process_exit_status_retained": false,
+    "log": "full-tests.txt",
+    "passed": 288,
+    "provenance": "surviving local pytest summary; not rerun in recovery",
+    "seconds": 242.81,
+    "skipped": 0
+  },
+  "historical_archives_sha256": {
+    "artifacts/release-0.1.1rc1/openline-vote-lab-0.1.1rc1.tar.gz": "d1456a79d3903ae19ff0f11a084f1c1f7df2443de332b7c14037fc177b41a8d4",
+    "artifacts/release-0.1.2rc1/openline-vote-lab-0.1.2rc1.tar.gz": "7cef59d2c2fcc04083789c966145bc37bb3868f6f0a702ceeda27bc6ba76a178",
+    "artifacts/release/openline-vote-lab-0.1.0rc1.tar.gz": "f0d234d9001660e461c356b092c14e1ee6e15a9d67f3bc1cee0cb5bf72ff1d41"
+  },
+  "limitations": [
+    "Saved test summaries and unsigned hashes are local evidence, not independent attestations.",
+    "No independent second-build log is retained; no rebuild was attempted.",
+    "Actual external administrators, authentic external pin channels and genuine external custody remain unverified.",
+    "Unobserved suppression, hidden forks, lost honest references, compromised devices, coercion, vote buying and denial of service remain unsolved."
+  ],
+  "matrix": {
+    "accepted_synthetic_ballots": 100,
+    "all_real_custody_statuses": "INCONCLUSIVE",
+    "all_without_trust_statuses": "INCONCLUSIVE",
+    "artifact_status_counts": {
+      "FAIL": 11,
+      "INCONCLUSIVE": 5,
+      "PASS": 4
+    },
+    "file": "WITNESS-002-results.json",
+    "local_expected_outcomes_passed": 20,
+    "rows": 20
+  },
+  "original_saved_evidence_locations": {
+    "WITNESS-002-results.json": "/workspace/openline-vote-lab/artifacts/witness-002-local/results.json",
+    "full-tests.txt": "/tmp/witness-002-full-tests.txt",
+    "offline-verification.json": "/tmp/witness-002-packaged-offline.json",
+    "packaged-custody-tests.txt": "/tmp/witness-002-packaged-tests.txt"
+  },
+  "real_custody_status": "INCONCLUSIVE",
+  "recovery_checks": {
+    "fresh_extracted_offline_verification": {
+      "argv": [
+        "/workspace/openline-vote-lab/.venv/bin/python",
+        "-B",
+        "/tmp/witness-002-offline-check.py",
+        "verify",
+        "--publication",
+        "/workspace/openline-vote-lab/artifacts/witness-002-local/offline/publication.json",
+        "--trust",
+        "/workspace/openline-vote-lab/artifacts/witness-002-local/offline/pinned-trust.json",
+        "--evidence",
+        "/workspace/openline-vote-lab/artifacts/witness-002-local/offline/witness-1-evidence.json",
+        "--evidence",
+        "/workspace/openline-vote-lab/artifacts/witness-002-local/offline/witness-2-evidence.json"
+      ],
+      "check": "fresh extracted-source offline verification of preserved valid rewrite",
+      "crypto_valid": true,
+      "detection": "DETECTED",
+      "exit_code": 1,
+      "outbound_connections_blocked": true,
+      "private_store_simulator_and_server_not_imported": true,
+      "real_custody_status": "INCONCLUSIVE",
+      "seconds": 7.627,
+      "source_root": "/tmp/witness-002-rc-hqh0nr8y/openline-vote-lab-0.1.2rc1",
+      "status": "FAIL",
+      "stdout_sha256": "363fb685332cf649ed3c61a099c6436f180881e4b99b4987287b8c5f5610340a"
+    },
+    "full_or_focused_test_suites_rerun": false,
+    "git_diff_check": "clean",
+    "historical_archives_and_checksum_files": "SHA-256 and modification times unchanged",
+    "pip_check": "No broken requirements found.",
+    "preserved_hash_manifest": "PRESERVED_HASHES.json",
+    "preserved_hashes_checked": 14
+  },
+  "same_uid_boundary_probe": {
+    "operator_can_rewrite_witness_store": true,
+    "scope": "Same-UID local control only; actual external boundary not tested",
+    "separation_requirement": "FAIL"
+  },
+  "schema": "openline-vote-lab/recovered-validation/v1",
+  "scope": "Preservation and local verification only; detection under authentic retained evidence assumptions is not prevention or a new OpenLine election-security guarantee.",
+  "sha256": "7cef59d2c2fcc04083789c966145bc37bb3868f6f0a702ceeda27bc6ba76a178",
+  "source_files": 46,
+  "source_git_commit": "c0e768aea7e2ed80f6f75ba2c7755bdc1a88253b",
+  "source_hash_manifest": "SOURCE_HASHES.json",
+  "source_manifest_sha256": "8f805049317bb69b2758d17a70bfdcb4c42ea6649a7404871a9a725e5602dd1d",
+  "third_party_reproduction": "NOT PERFORMED",
+  "witness_refusal": {
+    "artifact_status": "FAIL",
+    "retained_evidence_unchanged": true,
+    "test_result": "PASS"
+  }
+}

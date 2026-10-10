@@ -1,0 +1,1396 @@
+{
+  "experiment": "WITNESS-001",
+  "schema": "witness-001/results/v1",
+  "synthetic_voters": 100,
+  "conditions": {
+    "A": "All archive, key declarations and observer records are operator-controlled",
+    "B": "Observer files are in a separate directory, still operator-controlled",
+    "C": "Two observers model separately pinned keys and externally retained signed evidence"
+  },
+  "results": [
+    {
+      "scenario": "delete-accepted",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Delete an acknowledged ballot and compute a valid smaller tally",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "delete-accepted",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Delete an acknowledged ballot and compute a valid smaller tally",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "delete-accepted",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Delete an acknowledged ballot and compute a valid smaller tally",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "alter-ballot",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Alter ciphertext-linked data without a valid voter signature",
+      "record_hash": "b2ce517635dba9f386d8b3cab74b2f25faac6b1a617550f7aa42bb5bd30d05e8",
+      "status": "DETECTED",
+      "crypto_valid": false,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked"
+      ],
+      "evidence": [
+        "Existing election verification: Signed record has incorrect fields or scope"
+      ],
+      "errors": [
+        "Existing election verification: Signed record has incorrect fields or scope"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "alter-ballot",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Alter ciphertext-linked data without a valid voter signature",
+      "record_hash": "b2ce517635dba9f386d8b3cab74b2f25faac6b1a617550f7aa42bb5bd30d05e8",
+      "status": "DETECTED",
+      "crypto_valid": false,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked"
+      ],
+      "evidence": [
+        "Existing election verification: Signed record has incorrect fields or scope"
+      ],
+      "errors": [
+        "Existing election verification: Signed record has incorrect fields or scope"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "alter-ballot",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Alter ciphertext-linked data without a valid voter signature",
+      "record_hash": "b2ce517635dba9f386d8b3cab74b2f25faac6b1a617550f7aa42bb5bd30d05e8",
+      "status": "DETECTED",
+      "crypto_valid": false,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Existing election verification: Signed record has incorrect fields or scope",
+        "Signed published head for observer-1 conflicts with the supplied archive",
+        "Signed published head for observer-2 conflicts with the supplied archive",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Existing election verification: Signed record has incorrect fields or scope",
+        "Signed published head for observer-1 conflicts with the supplied archive",
+        "Signed published head for observer-2 conflicts with the supplied archive",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "replace-ballot",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Substitute a valid ciphertext with an operator-forged voter signature",
+      "record_hash": "09b07568e8baac0389c2d7ea5ad31f491178051d1b9948744fc95ac4b5a26283",
+      "status": "DETECTED",
+      "crypto_valid": false,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked"
+      ],
+      "evidence": [
+        "Existing election verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Existing election verification: Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "replace-ballot",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Substitute a valid ciphertext with an operator-forged voter signature",
+      "record_hash": "09b07568e8baac0389c2d7ea5ad31f491178051d1b9948744fc95ac4b5a26283",
+      "status": "DETECTED",
+      "crypto_valid": false,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked"
+      ],
+      "evidence": [
+        "Existing election verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Existing election verification: Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "replace-ballot",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Substitute a valid ciphertext with an operator-forged voter signature",
+      "record_hash": "09b07568e8baac0389c2d7ea5ad31f491178051d1b9948744fc95ac4b5a26283",
+      "status": "DETECTED",
+      "crypto_valid": false,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Existing election verification: Ed25519 signature is invalid",
+        "Signed published head for observer-1 conflicts with the supplied archive",
+        "Signed published head for observer-2 conflicts with the supplied archive",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Existing election verification: Ed25519 signature is invalid",
+        "Signed published head for observer-1 conflicts with the supplied archive",
+        "Signed published head for observer-2 conflicts with the supplied archive",
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "rewrite-history",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Reorder authentic accepted ballots and re-sign operator receipts",
+      "record_hash": "13081d450db0de7d1398a14cd86184bbb4636f8d03d23ed7c23999a93e27a37a",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "rewrite-history",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Reorder authentic accepted ballots and re-sign operator receipts",
+      "record_hash": "13081d450db0de7d1398a14cd86184bbb4636f8d03d23ed7c23999a93e27a37a",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "rewrite-history",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Reorder authentic accepted ballots and re-sign operator receipts",
+      "record_hash": "13081d450db0de7d1398a14cd86184bbb4636f8d03d23ed7c23999a93e27a37a",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "conflicting-histories",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Present different valid 100-ballot histories to two observers",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "conflicting-histories",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Present different valid 100-ballot histories to two observers",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "conflicting-histories",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Present different valid 100-ballot histories to two observers",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "forge-checkpoint",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Replace witness verification-key declarations and sign a rewritten checkpoint",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "forge-checkpoint",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Replace witness verification-key declarations and sign a rewritten checkpoint",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "forge-checkpoint",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Replace witness verification-key declarations and sign a rewritten checkpoint",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Published observer keys differ from separately pinned verification keys",
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Published observer keys differ from separately pinned verification keys",
+        "Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "replay-checkpoint",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Replay a genuinely signed checkpoint from another election scope",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Checkpoint election scope does not match the election anchor"
+      ],
+      "errors": [
+        "Checkpoint election scope does not match the election anchor"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "replay-checkpoint",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Replay a genuinely signed checkpoint from another election scope",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Checkpoint election scope does not match the election anchor"
+      ],
+      "errors": [
+        "Checkpoint election scope does not match the election anchor"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "replay-checkpoint",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Replay a genuinely signed checkpoint from another election scope",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Checkpoint election scope does not match the election anchor"
+      ],
+      "errors": [
+        "Checkpoint election scope does not match the election anchor"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "rollback-checkpoint",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Publish an authentic older signed revision and its valid 99-ballot tally",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "rollback-checkpoint",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Publish an authentic older signed revision and its valid 99-ballot tally",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "rollback-checkpoint",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Publish an authentic older signed revision and its valid 99-ballot tally",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Published checkpoint head for observer-1 is not its independently retained head: rollback or conflicting history",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Published checkpoint head for observer-2 is not its independently retained head: rollback or conflicting history"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-1 conflicts with the published archive",
+        "Published checkpoint head for observer-1 is not its independently retained head: rollback or conflicting history",
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Published checkpoint head for observer-2 is not its independently retained head: rollback or conflicting history"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "suppression-before-observation",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Suppress the last submission before any acknowledgment or independent observation",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "suppression-before-observation",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Suppress the last submission before any acknowledgment or independent observation",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "suppression-before-observation",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Suppress the last submission before any acknowledgment or independent observation",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-lost",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Delete a ballot and lose one observer's retained history",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-lost",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Delete a ballot and lose one observer's retained history",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-lost",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Delete a ballot and lose one observer's retained history",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Independently retained history/head for observer-1 is missing"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "observer-compromised",
+      "kind": "attack",
+      "condition": "A",
+      "description": "Delete a ballot and compromise one observer's key and retained history",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-compromised",
+      "kind": "attack",
+      "condition": "B",
+      "description": "Delete a ballot and compromise one observer's key and retained history",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-compromised",
+      "kind": "attack",
+      "condition": "C",
+      "description": "Delete a ballot and compromise one observer's key and retained history",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "errors": [
+        "Independently retained signed closed head for observer-2 conflicts with the published archive",
+        "Authentic retained observer views conflict; signatures do not identify which observer is honest"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "honest",
+      "kind": "negative-control",
+      "condition": "A",
+      "description": "Both retained histories agree with an unchanged archive",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "honest",
+      "kind": "negative-control",
+      "condition": "B",
+      "description": "Both retained histories agree with an unchanged archive",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "honest",
+      "kind": "negative-control",
+      "condition": "C",
+      "description": "Both retained histories agree with an unchanged archive",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "idempotent-replay",
+      "kind": "negative-control",
+      "condition": "A",
+      "description": "Re-present the same genuine checkpoint for the same state",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "idempotent-replay",
+      "kind": "negative-control",
+      "condition": "B",
+      "description": "Re-present the same genuine checkpoint for the same state",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "idempotent-replay",
+      "kind": "negative-control",
+      "condition": "C",
+      "description": "Re-present the same genuine checkpoint for the same state",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "isolated-equivocation",
+      "kind": "negative-control",
+      "condition": "A",
+      "description": "An observer sees only its own internally consistent fork",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "isolated-equivocation",
+      "kind": "negative-control",
+      "condition": "B",
+      "description": "An observer sees only its own internally consistent fork",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "isolated-equivocation",
+      "kind": "negative-control",
+      "condition": "C",
+      "description": "An observer sees only its own internally consistent fork",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Outside authenticity, honest observation and custody are assumed, not tested on this machine. Explicit single-observer policy cannot expose an unavailable conflicting view.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-lost-honest",
+      "kind": "negative-control",
+      "condition": "A",
+      "description": "Lose one observer's evidence with no archive alteration",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-lost-honest",
+      "kind": "negative-control",
+      "condition": "B",
+      "description": "Lose one observer's evidence with no archive alteration",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "observer-lost-honest",
+      "kind": "negative-control",
+      "condition": "C",
+      "description": "Lose one observer's evidence with no archive alteration",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "INCONCLUSIVE",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "Independently retained signed histories matched separately retained head references"
+      ],
+      "evidence": [],
+      "errors": [
+        "Independently retained history/head for observer-1 is missing"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Required 2-observer evidence coverage is incomplete.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "all-observers-lost",
+      "kind": "negative-control",
+      "condition": "A",
+      "description": "No independently retained checkpoint remains available",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "all-observers-lost",
+      "kind": "negative-control",
+      "condition": "B",
+      "description": "No independently retained checkpoint remains available",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "NOT DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally",
+        "Published checkpoint scopes, signatures, sequences and predecessor commitments checked",
+        "No contradiction in supplied evidence; this does not establish absence of an attack"
+      ],
+      "evidence": [],
+      "errors": [],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. No independently retained evidence was used; archive completeness is unproved.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "all-observers-lost",
+      "kind": "negative-control",
+      "condition": "C",
+      "description": "No independently retained checkpoint remains available",
+      "record_hash": "d7cf3065ecdfd77e677a3f7e6812f4f0c324a3640b04f292818471d0184c3188",
+      "status": "INCONCLUSIVE",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [],
+      "errors": [
+        "Independently retained history/head for observer-1 is missing",
+        "Independently retained history/head for observer-2 is missing"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established. Required 2-observer evidence coverage is incomplete.",
+      "without_independent_evidence": "NOT DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": true
+    },
+    {
+      "scenario": "invalid-signature",
+      "kind": "negative-control",
+      "condition": "A",
+      "description": "Ordinary malformed checkpoint signature, not a valid key replacement",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "invalid-signature",
+      "kind": "negative-control",
+      "condition": "B",
+      "description": "Ordinary malformed checkpoint signature, not a valid key replacement",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Operator-provided keys and history: no outside authenticity or freshness established",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic election parameters for the interpreted election",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    },
+    {
+      "scenario": "invalid-signature",
+      "kind": "negative-control",
+      "condition": "C",
+      "description": "Ordinary malformed checkpoint signature, not a valid key replacement",
+      "record_hash": "0949b26cc25abe91fb93b8adb16fd6d6625a825e47c1a9f3a3728053160d3432",
+      "status": "DETECTED",
+      "crypto_valid": true,
+      "checks": [
+        "Separate election anchor and observer verification keys supplied",
+        "Existing verifier checked eligibility, signatures, ElectionGuard proofs and recomputed tally"
+      ],
+      "evidence": [
+        "Supplied artifact fails bounded schema, scope, chain or signature verification: Ed25519 signature is invalid"
+      ],
+      "errors": [
+        "Ed25519 signature is invalid"
+      ],
+      "trustworthy_party": [
+        "Authentic separately retained election anchor and verification keys",
+        "At least one honest observer retaining the relevant observed history",
+        "Correct verifier and reused ElectionGuard/cryptography implementations"
+      ],
+      "scope": "Consistency of the supplied encrypted archive and observed history only. Detection is not prevention or recovery; unobserved submissions, hidden views, voter intent, and real-world independent custody are not established.",
+      "without_independent_evidence": "DETECTED",
+      "without_any_witness_statements": "NOT DETECTED",
+      "removing_evidence_changes_result": false
+    }
+  ],
+  "isolation": "Simulated custody on one machine; no genuine external operational independence",
+  "privacy": "Commitment receipts contain no vote choices or openings; receipt-freeness is NOT established",
+  "external_api_spending_usd": 0
+}

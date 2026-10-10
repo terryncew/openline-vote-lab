@@ -1,0 +1,41 @@
+{
+  "schema": "witness-001/retained/v1",
+  "histories": {
+    "observer-2": [
+      {
+        "payload": {
+          "anchor_hash": "c3c9da8c5d8bad8807c5763adc5ebf872bebd87978b401a4008f2c9851fc8eed",
+          "ballot_count": 100,
+          "domain": "witness-001/checkpoint/v1",
+          "election_id": "fictional-commons-c3b184786b8b4fb69f8f0189f7841de3",
+          "observer_id": "observer-2",
+          "phase": "closed",
+          "previous_checkpoint_hash": null,
+          "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+          "sequence": 1
+        },
+        "signature": "TRtpcLX8CWNbiNoji437WD4idxTvrddKDgE7tGTqeVA2+1/p5vPT5XU0M7q2YNLgTl90cCbtzevGSzMZG+gmAA=="
+      },
+      {
+        "payload": {
+          "anchor_hash": "c3c9da8c5d8bad8807c5763adc5ebf872bebd87978b401a4008f2c9851fc8eed",
+          "ballot_count": 100,
+          "domain": "witness-001/checkpoint/v1",
+          "election_id": "fictional-commons-c3b184786b8b4fb69f8f0189f7841de3",
+          "observer_id": "observer-2",
+          "phase": "closed",
+          "previous_checkpoint_hash": "6ec2e6f2935510ab687e60381a8450f26482b5732bd8c5a48dbee8cd2dfbcedb",
+          "record_hash": "b5f5e5ae021c619002cb11cc446f8ee0ea0e26e2e510d6c76a93addcf57fd978",
+          "sequence": 2
+        },
+        "signature": "j8M5rjM8Oc1gXp0Pm0Os8VL0jFHJFG4ihRBj9kCm9Ze1tfH66Irl67xMQdCXoUar0aWfvwWtjVP5Ap62udlKDg=="
+      }
+    ]
+  },
+  "heads": {
+    "observer-2": {
+      "checkpoint_hash": "4ed360ba9af65873a9df284f68629be56f38f5f22702f2ea6548c92e557445db",
+      "sequence": 2
+    }
+  }
+}
