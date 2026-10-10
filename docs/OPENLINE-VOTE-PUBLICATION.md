@@ -72,9 +72,19 @@ The source release archive is produced from the reviewed Git commit, using
 only tracked files and normalized gzip metadata. It includes documentation,
 tests, safe research evidence and the unchanged historical archives. Generated
 key stores, raw session state, environments and Git credentials are excluded.
-New archive extraction and focused test results are recorded in the separate
-release asset `PUBLICATION-VALIDATION.json`; it identifies the exact source
-commit and archive hashes without creating a self-referential source manifest.
+New archive extraction and focused test results are recorded in
+[PUBLICATION-VALIDATION.json](openline-vote/validation/PUBLICATION-VALIDATION.json)
+and the [extracted test log](openline-vote/validation/publication-extracted-tests.txt).
+They identify the tested archive commit and hashes without creating a
+self-referential source manifest. The final publication commit adds only these
+safe provenance files and this delivery note; application bytes remain unchanged.
+
+Native GitHub release-asset upload authentication was unavailable in this
+environment. The prerelease therefore links to the committed walkthrough and
+validation evidence, and uses GitHub's generated source archives. Those archives
+have a different layout from the locally tested custom tarball; verify their
+published contents against the tagged commit. Do not compare their compressed
+bytes to the custom tarball's checksum. No dependency image is published.
 
 After downloading and extracting the source archive, run the README's pinned
 Python 3.12 installation and tests. The offline verifier operates on exported

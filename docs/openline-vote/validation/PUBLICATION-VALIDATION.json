@@ -1,0 +1,171 @@
+{
+  "custody": "INCONCLUSIVE",
+  "experimental_prerelease": true,
+  "external_api_spending_usd": 0,
+  "original_archive_hashes": {
+    "0.1.0rc1": "f0d234d9001660e461c356b092c14e1ee6e15a9d67f3bc1cee0cb5bf72ff1d41",
+    "0.1.1rc1": "d1456a79d3903ae19ff0f11a084f1c1f7df2443de332b7c14037fc177b41a8d4",
+    "0.1.2rc1": "7cef59d2c2fcc04083789c966145bc37bb3868f6f0a702ceeda27bc6ba76a178"
+  },
+  "original_clean_container_tests": {
+    "log": "docs/openline-vote/validation/clean-container-tests.txt",
+    "network": "none",
+    "passed": 67,
+    "seconds": 117.56
+  },
+  "original_full_local_tests": {
+    "log": "docs/openline-vote/validation/full-tests.txt",
+    "passed": 317,
+    "seconds": 328.23
+  },
+  "pre_observation_suppression": "NOT DETECTED",
+  "public_voting_server_deployment": false,
+  "publication_extracted_archive_tests": {
+    "dependency_environment": "Reused installed pinned .venv; separate extracted source root",
+    "exit_code": 0,
+    "log": "publication-extracted-tests.txt",
+    "passed": 67,
+    "seconds": 120.44,
+    "test_files": [
+      "tests/test_demo_server.py",
+      "tests/test_public_review.py",
+      "tests/test_crypto.py"
+    ]
+  },
+  "publication_safety_audit": {
+    "archives": [
+      {
+        "directories": 0,
+        "files": 33,
+        "members": 33,
+        "path": "git:7cc94ff9ced849dfae7204bee877ce1201208de0:artifacts/release-0.1.1rc1/openline-vote-lab-0.1.1rc1.tar.gz",
+        "sensitive_filenames": [],
+        "sha256": "d1456a79d3903ae19ff0f11a084f1c1f7df2443de332b7c14037fc177b41a8d4",
+        "unsafe_member_types": [],
+        "unsafe_paths": []
+      },
+      {
+        "directories": 0,
+        "files": 46,
+        "members": 46,
+        "path": "git:18e4bc34903dd989f22616e6f4a6f8cfcca3362b:artifacts/release-0.1.2rc1/openline-vote-lab-0.1.2rc1.tar.gz",
+        "sensitive_filenames": [],
+        "sha256": "7cef59d2c2fcc04083789c966145bc37bb3868f6f0a702ceeda27bc6ba76a178",
+        "unsafe_member_types": [],
+        "unsafe_paths": []
+      },
+      {
+        "directories": 0,
+        "files": 27,
+        "members": 27,
+        "path": "git:2a52623fc2947612b820612cb352ccc31f026021:artifacts/release/openline-vote-lab-0.1.0rc1.tar.gz",
+        "sensitive_filenames": [],
+        "sha256": "f0d234d9001660e461c356b092c14e1ee6e15a9d67f3bc1cee0cb5bf72ff1d41",
+        "unsafe_member_types": [],
+        "unsafe_paths": []
+      },
+      {
+        "directories": 15,
+        "files": 101,
+        "members": 116,
+        "path": "artifacts/release-0.2.0rc1-publication/openline-vote-0.2.0rc1.tar.gz",
+        "sensitive_filenames": [],
+        "sha256": "b3deb9150d632423956942692fe887cfeb8b75ac53f398ddf37fb30a92fd2303",
+        "unsafe_member_types": [],
+        "unsafe_paths": []
+      },
+      {
+        "directories": 0,
+        "files": 33,
+        "members": 33,
+        "path": "artifacts/release-0.2.0rc1-publication/openline-vote-0.2.0rc1.tar.gz::openline-vote-0.2.0rc1/artifacts/release-0.1.1rc1/openline-vote-lab-0.1.1rc1.tar.gz",
+        "sensitive_filenames": [],
+        "sha256": "d1456a79d3903ae19ff0f11a084f1c1f7df2443de332b7c14037fc177b41a8d4",
+        "unsafe_member_types": [],
+        "unsafe_paths": []
+      },
+      {
+        "directories": 0,
+        "files": 46,
+        "members": 46,
+        "path": "artifacts/release-0.2.0rc1-publication/openline-vote-0.2.0rc1.tar.gz::openline-vote-0.2.0rc1/artifacts/release-0.1.2rc1/openline-vote-lab-0.1.2rc1.tar.gz",
+        "sensitive_filenames": [],
+        "sha256": "7cef59d2c2fcc04083789c966145bc37bb3868f6f0a702ceeda27bc6ba76a178",
+        "unsafe_member_types": [],
+        "unsafe_paths": []
+      },
+      {
+        "directories": 0,
+        "files": 27,
+        "members": 27,
+        "path": "artifacts/release-0.2.0rc1-publication/openline-vote-0.2.0rc1.tar.gz::openline-vote-0.2.0rc1/artifacts/release/openline-vote-lab-0.1.0rc1.tar.gz",
+        "sensitive_filenames": [],
+        "sha256": "f0d234d9001660e461c356b092c14e1ee6e15a9d67f3bc1cee0cb5bf72ff1d41",
+        "unsafe_member_types": [],
+        "unsafe_paths": []
+      }
+    ],
+    "audited_commit": "bdfa80b5308b0218779f85be9f0469637d0aa165",
+    "credential_matches_without_values": [],
+    "history_blobs": 108,
+    "history_commits": 5,
+    "ignored_witness_seeds_compared": 6,
+    "json_objects_scanned": 38,
+    "new_publication_json_files_scanned": [],
+    "new_source_archive_exact_commit_file_set_and_bytes": true,
+    "private_seed_raw_or_encoding_hits": [],
+    "sensitive_json_field_findings": [
+      {
+        "count": 500,
+        "field": "nonce",
+        "is_null": true,
+        "path": "git:a9077cfcd379d7ca2805807bcf63b9c0dab575cf:artifacts/release-0.1.2rc1/offline/publication.json",
+        "value_type": "NoneType"
+      },
+      {
+        "count": 500,
+        "field": "nonce",
+        "is_null": true,
+        "path": "artifacts/release-0.2.0rc1-publication/openline-vote-0.2.0rc1.tar.gz::openline-vote-0.2.0rc1/artifacts/release-0.1.2rc1/offline/publication.json",
+        "value_type": "NoneType"
+      }
+    ],
+    "status": "PASS",
+    "tracked_files": 101
+  },
+  "publication_startup": "PASS; default loopback; no published ports; networking disabled; configuration-only check",
+  "python_application_crypto_tests_dependencies_unchanged_from_baseline": true,
+  "release": "OpenLine Vote 0.2.0rc1",
+  "release_delivery": {
+    "native_asset_uploads": "Unavailable: uploads.github.com authentication returned401",
+    "public_source_archives": "GitHub-generated tag archives; layout/compressed hash differs from custom local archive; verify separately against tagged files",
+    "validation": "Included in tagged source",
+    "walkthrough": "Committed MP4 linked from prerelease"
+  },
+  "shared_account_isolation": "FAILED",
+  "source_archive": {
+    "all_files_match_commit": true,
+    "filename": "openline-vote-0.2.0rc1.tar.gz",
+    "regular_files": 101,
+    "second_pack_identical": true,
+    "sha256": "b3deb9150d632423956942692fe887cfeb8b75ac53f398ddf37fb30a92fd2303"
+  },
+  "source_commit": "bdfa80b5308b0218779f85be9f0469637d0aa165",
+  "source_commit_description": "Commit used for the tested local custom source archive. The final publication commit adds only safe provenance documents; application, crypto, tests and dependencies are unchanged.",
+  "tested_baseline_commit": "6843d2269b7dc98bdc62b3fc6b3f02972fab8740",
+  "unsolved": [
+    "Compromised phones",
+    "Coercion",
+    "Vote buying",
+    "Denial of service",
+    "Real independent custody",
+    "Binding election administration"
+  ],
+  "walkthrough": {
+    "duration_seconds": 30.0,
+    "edit_disclosure": "Genuine local run | processing shortened",
+    "filename": "openline-vote-30s.mp4",
+    "media_disclosure_audit": "PASS",
+    "sha256": "b0e3ca354eb0adeb94abce42676064c08af35dd17ea522a7746fcd6bfaedc904"
+  }
+}
