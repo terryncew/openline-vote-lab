@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "scope": "Default startup configuration only: image derived from previously tested candidate runtime, changing only CMD to match current Dockerfile. No dependency reinstall or full source rebuild.",
+  "base_image_id": "sha256:ff6d94d71780093888c70b127ab72391efd4214b519063ddf0b12b9bb14ac14c",
+  "derived_image_id": "sha256:bbb7cc23d1d463b1c3bbf118b54566e8b9f73e280fcd582318aa87329e971191",
+  "candidate_default_cmd": [
+    "python",
+    "-m",
+    "vote_lab.demo_server",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8001"
+  ],
+  "network_mode": "none",
+  "read_only_rootfs": true,
+  "published_ports": false,
+  "cap_drop": [
+    "ALL"
+  ],
+  "security_opt": [
+    "no-new-privileges"
+  ],
+  "checks": {
+    "health": {
+      "scope": "synthetic research demo",
+      "status": "ok"
+    },
+    "health_http_status": 200,
+    "unknown_host_status": 403,
+    "tcp_listeners": [
+      "0100007F:1F41"
+    ],
+    "server_sha256": "dae4c30f69edd05d2e666a18fae8eca533527adfca72e99cf867a094a16fac4b",
+    "uid": 10001,
+    "gid": 10001,
+    "proxy_or_build_ca_env_present": false,
+    "excluded_paths_absent": true
+  },
+  "source_hashes": {
+    "Dockerfile.demo": "e984b1e260388158fe6b399accaef6eb304fa30f6fba82db5ecf194f52ae573d",
+    "docs/OPENLINE-VOTE-PUBLISH.md": "98b7ff860b13a5aac74e3800856e5f3897bbf51d05e3682b216908059eca5f0e",
+    "vote_lab/demo_server.py": "dae4c30f69edd05d2e666a18fae8eca533527adfca72e99cf867a094a16fac4b"
+  }
+}

@@ -39,7 +39,7 @@ EXPOSE 8001
 
 # One process owns ephemeral browser sessions. gevent.pywsgi is already locked;
 # the application runs bounded cryptographic work in native background threads.
-CMD ["python", "-m", "vote_lab.demo_server", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["python", "-m", "vote_lab.demo_server", "--host", "127.0.0.1", "--port", "8001"]
 
 # Explicit local validation target; test sources are absent from the final demo.
 FROM runtime AS validation

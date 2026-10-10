@@ -8,6 +8,14 @@ OpenLine Vote is an open-source research demonstration of encrypted ballots and 
 
 [Watch the real 30-second walkthrough](docs/openline-vote/walkthrough.mp4) · [Phone preview](docs/openline-vote/phone.png) · [Desktop preview](docs/openline-vote/desktop.png)
 
+## Why I started this
+
+While researching cryptographic verification for AI agents, I started thinking about voting. If a system records an action, can someone else check what happened without simply trusting the person running that system?
+
+Voting makes that question concrete: a ballot must stay secret, and the count must be checkable. Established systems such as ElectionGuard and Helios already study these problems. OpenLine Vote uses that work to explore a narrower question: **what changes when someone outside the election operator keeps authentic evidence of the earlier record?**
+
+This experiment does not establish a new voting protocol or show that OpenLine's agent authorization makes elections safer. Its useful result is a demonstration of where retained evidence helps—and where it cannot help.
+
 ## Try it locally
 
 Python **3.12**, Git, and an initial free dependency download are required. Linux x86-64 is the tested platform.
@@ -18,7 +26,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m vote_lab.demo_server --port 8001
 ```
 
-Open `http://127.0.0.1:8001` on that machine. The default listener is local. A phone-accessible public link requires an approved HTTPS host; no public deployment or GitHub push has been performed. See the [exact publication and hosting instructions](docs/OPENLINE-VOTE-PUBLISH.md).
+Open `http://127.0.0.1:8001` on that machine. The default listener is loopback, including the container's default command. No publicly accessible voting server has been deployed. See the [setup and hosting instructions](docs/OPENLINE-VOTE-PUBLISH.md); public hosting is a separate decision from publishing this source.
 
 No sign-up. Each browser gets a separate temporary fictional election with 100 synthetic voters. The visitor chooses one fake ballot; the other 99 choices are randomized. Starting another election does not reset someone else's demonstration.
 
@@ -31,6 +39,8 @@ No sign-up. Each browser gets a separate temporary fictional election with 100 s
 The browser shows actual results from the existing verifier. Loading indicators describe work in progress; they are not proof of success. A displayed server result is still delivered by the demo operator. Downloaded evidence and an independently run verifier provide a separate checking path.
 
 Receipts contain commitments, not choices or encryption openings. **Encryption, recording, inclusion and a verified tally are different claims.** None proves that a phone encrypted the intended choice, every attempted submission was accepted, or the administrators were independent.
+
+An observer can keep a signed checkpoint of an earlier election record. If a later record has changed, comparing it with that authentic checkpoint exposes the disagreement. The protection depends on someone trustworthy keeping the evidence and authenticating its verification key outside the operator's control. Moving files into another folder owned by the same operator does not establish that independence.
 
 ## Why can't we use this for real elections?
 
@@ -72,6 +82,8 @@ ElectionGuard supplies the ballot encryption, validity proofs, aggregation and d
 
 ## Develop and review
 
+The candidate passed **317 local tests**, plus **67 focused tests in a clean container installation**. Browser checks exercised real cryptography, downloaded evidence verification, both attacks, keyboard controls, and layouts from 320 to 1440 pixels. These are local engineering checks, not independent security review. See the [recorded validation evidence](docs/OPENLINE-VOTE-READINESS.md) and [publication audit](docs/OPENLINE-VOTE-PUBLICATION.md).
+
 ```sh
 .venv/bin/python -m pytest -q
 .venv/bin/python -m pip check
@@ -88,8 +100,14 @@ The original browser remains available through `.venv/bin/python -m vote_lab ser
 
 The new experience uses semantic controls, visible keyboard focus, responsive layouts, text verdicts and reduced-motion support. Mobile, keyboard and browser checks are recorded in the readiness report; they are not an accessibility certification.
 
+## Help challenge the research
+
+Election-security researchers, cryptographers, public-policy specialists, and open-source contributors are invited to inspect the code, reproduce the tests, question the assumptions, and improve the explanation. Finding a failure is a useful contribution.
+
+Start with the [research findings](docs/RESEARCH.md), [WITNESS-001](docs/WITNESS-001.md), [WITNESS-002](docs/WITNESS-002.md), and [contribution guide](CONTRIBUTING.md). The [external custody test](docs/WITNESS-002-EXTERNAL-TEST.md) describes an experiment that still needs genuinely separate administrators; it has not been performed. Keep new work fictional and nonbinding, and document what it establishes before making stronger claims.
+
 ## Share the experiment
 
 [30-second walkthrough](docs/openline-vote/walkthrough.mp4) · [Publication instructions](docs/OPENLINE-VOTE-PUBLISH.md) · [Source repository](https://github.com/terryncew/openline-vote-lab)
 
-Apache-2.0 licensed under the existing [LICENSE](LICENSE). Upstream dependencies retain their licenses. External API spending: **$0**. Publication, public deployment and external custody testing require approval.
+Apache-2.0 licensed under the existing [LICENSE](LICENSE). Upstream dependencies retain their licenses. External API spending: **$0**. Public server deployment and external custody testing require separate approval. Secure voting from personal phones has not been solved.

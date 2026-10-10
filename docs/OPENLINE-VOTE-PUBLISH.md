@@ -85,11 +85,14 @@ docker run --rm --init --name openline-vote-local \
   --read-only --tmpfs /tmp:rw,nosuid,noexec,size=64m \
   --cap-drop ALL --security-opt no-new-privileges \
   --memory=2g --cpus=2 \
-  -p 127.0.0.1:8001:8001 openline-vote:local
+  -p 127.0.0.1:8001:8001 openline-vote:local \
+  python -m vote_lab.demo_server --host 0.0.0.0 --port 8001
 ```
 
-This maps the container listener to loopback only. It does not make the demo
-public. Use a second terminal to check the response and then complete the
+The image's default command binds to `127.0.0.1` inside the container. The
+explicit command above opts into `0.0.0.0` inside the container so Docker's
+port mapping can reach it; the published host port remains `127.0.0.1` only.
+This does not make the demo public. Use a second terminal to check the response and then complete the
 three-stage browser flow:
 
 ```sh
@@ -166,9 +169,12 @@ docker run --detach --init --name openline-vote-demo \
   -p 127.0.0.1:8001:8001 \
   -e OPENLINE_ALLOWED_HOSTS=demo.example.org \
   -e OPENLINE_COOKIE_SECURE=1 \
-  openline-vote:local
+  openline-vote:local \
+  python -m vote_lab.demo_server --host 0.0.0.0 --port 8001
 ```
 
+This explicitly opts into a container-internal listener while preserving the
+loopback-only host port mapping. The image's default listener remains loopback.
 Keep the application port private. Terminate TLS with an existing trusted
 reverse proxy and preserve `Host: demo.example.org`. For example, an approved
 Caddy installation on that same machine can use:
