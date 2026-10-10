@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <meta name="description" content="Cast a fictional encrypted ballot, check the evidence, and try to break the election record. An open-source research demonstration.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OpenLine Vote — a vote you can check">
+  <meta property="og:description" content="Cast a fictional encrypted ballot. Follow the evidence. Try to break the record. An experimental, open-source research demonstration.">
+  <meta name="twitter:card" content="summary">
+  <title>OpenLine Vote — a vote you can check</title>
+  <link rel="icon" href="/static/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#demo">Skip to the demonstration</a>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="OpenLine Vote home">
+      <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3a15 15 0 1 0 15 15"/><path d="M18 10a8 8 0 1 0 8 8"/><path d="m21 3 12 0 0 12M18 18 32 4"/></svg>
+      <span>OpenLine <strong>Vote</strong></span>
+    </a>
+    <div class="header-links"><span class="research-tag"><span></span>Research prototype</span><a class="source-link" href="https://github.com/terryncew/openline-vote-lab" rel="noreferrer">View source <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></a></div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">A small experiment in public trust</p><h1 id="hero-title">A vote you<br>can <em>check.</em></h1><p class="hero-description">Choose a fictional project. Follow the evidence.<br class="wide-break"> Then try to break the record.</p></div>
+      <div class="hero-note"><div class="note-line"></div><p>Experience the idea.<br><strong>Discover its limits.</strong></p><span>Three steps to explore</span></div>
+    </section>
+
+    <section id="demo" class="demo-layout" aria-label="Interactive voting research demonstration">
+      <aside class="journey">
+        <nav class="stage-nav" aria-label="Demonstration stages">
+          <button class="stage-link active" data-stage="vote" aria-current="step"><span class="step-number">01</span><span class="stage-label">Vote<small>Make a fictional choice</small></span><span class="step-mark" aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></span></button>
+          <button class="stage-link" data-stage="verify" disabled><span class="step-number">02</span><span class="stage-label">Verify<small>Follow the evidence</small></span><span class="step-mark" aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></span></button>
+          <button class="stage-link" data-stage="audit" disabled><span class="step-number">03</span><span class="stage-label">Audit<small>Try to break the record</small></span><span class="step-mark" aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></span></button>
+        </nav>
+        <div class="journey-note"><span class="tiny-lock" aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 9V6a5 5 0 0 1 10 0v3M4 9h12v9H4z"/></svg></span><p>No signup. No personal information. <strong>No real election.</strong></p><p>100 synthetic voters.<br>One fictional town.</p></div>
+      </aside>
+
+      <div class="demo-main">
+        <div id="connection-error" class="connection-error" role="alert" hidden><span id="connection-error-text"></span><button id="retry-button" class="text-button" type="button" hidden>Check connection <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a7 7 0 1 1 0 6M4 3v5h5"/></svg></span></button></div>
+        <div id="activity" class="activity" role="status" aria-live="polite"><span class="activity-dot" aria-hidden="true"></span><span id="activity-text">Connecting to the research demo…</span></div>
+        <noscript><div class="connection-error">This demonstration needs JavaScript to request and display live cryptographic checks. The research reports and source code remain available below.</div></noscript>
+
+        <section id="stage-vote" class="stage-panel vote-panel" aria-labelledby="vote-heading">
+          <div class="panel-topline"><span class="panel-kicker">01 / Vote</span><span class="fictional-chip">Fictional election</span></div>
+          <h2 id="vote-heading" tabindex="-1">A little town.<br>A shared future.</h2><p class="panel-description">What should the fictional town of Meadow build next?</p>
+          <form id="vote-form">
+            <fieldset id="choice-fieldset" disabled><legend class="visually-hidden">Choose a fictional project</legend>
+              <div class="choice-grid">
+                <label class="choice-card garden-card"><input type="radio" name="choice" value="garden" required><span class="choice-art" aria-hidden="true"><svg viewBox="0 0 220 140"><path class="art-ground" d="M28 119h165"/><path class="art-stem" d="M109 118V66m-32 51V84m64 33V83"/><path class="art-leaf" d="M108 88C79 87 67 68 76 54c21-1 34 13 32 34Zm3-13c0-23 17-44 39-41 5 22-10 38-39 41Zm-34 31C54 105 46 94 50 82c18-3 30 8 27 24Zm65-2c1-22 14-32 29-29 5 16-6 28-29 29Z"/><path class="art-bed" d="m41 120 10-18h118l11 18Z"/><circle class="art-sun" cx="179" cy="29" r="12"/><path class="art-detail" d="m18 42 4-4 4 4m158 23 4-4 4 4"/></svg></span><span class="choice-meta"><span><strong>A community garden</strong><small>A place to grow, together.</small></span><span class="radio-indicator" aria-hidden="true"></span></span></label>
+                <label class="choice-card library-card"><input type="radio" name="choice" value="library" required><span class="choice-art" aria-hidden="true"><svg viewBox="0 0 220 140"><path class="art-building" d="M47 62h128v57H47z"/><path class="art-roof" d="m35 62 76-35 76 35Z"/><path class="art-door" d="M99 119V87c0-17 24-17 24 0v32"/><path class="art-detail" d="M65 79h17v22H65zm76 0h17v22h-17zM34 120h154m-81-73h8m-4-4v8"/><path class="art-book" d="m21 89 13 5V74l-13-5Zm13 5 13-5V69l-13 5"/><circle class="art-sun" cx="183" cy="24" r="9"/></svg></span><span class="choice-meta"><span><strong>A neighborhood library</strong><small>A place for curious minds.</small></span><span class="radio-indicator" aria-hidden="true"></span></span></label>
+              </div>
+            </fieldset>
+            <div class="cast-row"><button id="vote-button" class="button button-primary" type="submit" disabled>Encrypt my demo ballot <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></button><p>This is a synthetic ballot.<br>It has no real-world effect.</p></div>
+          </form>
+          <div class="panel-footnote"><span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5m0-8v.1"/></svg></span><p>Real ElectionGuard encryption runs on this demo server. The server sees your fictional choice and holds all simulated keys; this is <strong>not private internet voting.</strong></p></div>
+        </section>
+
+        <section id="stage-verify" class="stage-panel" aria-labelledby="verify-heading" hidden>
+          <div class="panel-topline"><span class="panel-kicker">02 / Verify</span><span id="sealed-chip" class="fictional-chip">Preparing the evidence</span></div>
+          <h2 id="verify-heading" tabindex="-1">Don't just take<br>our word for it.</h2><p class="panel-description">A receipt points to an encrypted ballot. The evidence lets a verifier check the published record.</p>
+
+          <div class="receipt-card"><div class="receipt-header"><span class="receipt-label"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h10v16l-2-1.5-3 1.5-3-1.5L5 18Z"/><path d="M8 6h4M8 10h4"/></svg>Your public receipt</span><span id="receipt-status" class="mini-status">Waiting</span></div><p id="receipt-hash" class="receipt-hash">The server has not returned a receipt yet.</p><div class="receipt-footer"><span>Encrypted ballot fingerprint</span><button id="copy-receipt" class="text-button" type="button" disabled>Copy <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></button></div><p class="receipt-explanation">No choice, decryption key, or ballot opening is in this receipt. It identifies a ciphertext, not how you voted. This does not solve coercion or vote buying.</p></div>
+
+          <ol class="evidence-trail" aria-label="Different kinds of evidence">
+            <li id="proof-encryption"><span class="trail-mark" aria-hidden="true">1</span><span><strong>Encrypted</strong><small>A ciphertext and valid ballot proofs.</small></span><span class="trail-status">Not checked</span></li>
+            <li id="proof-recording"><span class="trail-mark" aria-hidden="true">2</span><span><strong>Recorded</strong><small>A signed acknowledgment from the operator.</small></span><span class="trail-status">Not checked</span></li>
+            <li id="proof-inclusion"><span class="trail-mark" aria-hidden="true">3</span><span><strong>Included</strong><small>Your fingerprint matches a ballot in this record.</small></span><span class="trail-status">Not checked</span></li>
+            <li id="proof-tally"><span class="trail-mark" aria-hidden="true">4</span><span><strong>Tally verified</strong><small>Published tally evidence passes the existing verifier.</small></span><span class="trail-status">Not checked</span></li>
+          </ol>
+
+          <button id="verify-button" class="button button-primary" type="button" disabled>Check the evidence <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></button>
+          <div id="verification-result" class="result-card" role="status" hidden><span id="verification-symbol" class="result-symbol" aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg></span><div><p id="verification-label" class="result-kicker">Verification result</p><h3 id="verification-title"></h3><p id="verification-summary"></p><ul id="verification-errors" hidden></ul></div></div>
+          <div id="published-tally" class="published-tally" hidden><div class="tally-header"><span>Published tally</span><span>100 synthetic ballots</span></div><div class="tally-counts"><div><span class="tally-dot garden-dot" aria-hidden="true"></span><span>Garden</span><strong id="garden-count"></strong></div><div><span class="tally-dot library-dot" aria-hidden="true"></span><span>Library</span><strong id="library-count"></strong></div></div><p>Only group totals are shown. Small or unanimous groups can still reveal choices.</p></div>
+          <div id="verification-next" class="next-row" hidden><p>Consistent evidence is a start.<br><strong>What if the operator changes it?</strong></p><button id="to-audit" class="button button-secondary" type="button">Try an attack <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></span></button></div>
+          <details id="technical-evidence" class="technical-details"><summary>Take the evidence with you <span aria-hidden="true">+</span></summary><p>Download the public files and run the offline verifier without the operator's database or API. Authenticate verification keys separately; files from the operator alone do not establish independent custody.</p><div class="export-links"><a id="export-record" href="/api/demo/export/record" download aria-disabled="true">Election record <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v13m-5-5 5 5 5-5"/></svg></span></a><a id="export-anchor" href="/api/demo/export/anchor" download aria-disabled="true">Election anchor <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v13m-5-5 5 5 5-5"/></svg></span></a><a id="export-checkpoint" href="/api/demo/export/checkpoint" download aria-disabled="true">Witness evidence <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v13m-5-5 5 5 5-5"/></svg></span></a><a id="export-receipt" href="/api/demo/export/receipts" download aria-disabled="true">Your receipt <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v13m-5-5 5 5 5-5"/></svg></span></a></div><a class="inline-link" href="/research/verification">Independent verification instructions <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></a></details>
+          <div class="panel-footnote"><span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5m0-8v.1"/></svg></span><p>A passing check means <strong>these supplied files agree.</strong> It does not prove trustworthy voter devices, fair administration, or an independently held witness record.</p></div>
+        </section>
+
+        <section id="stage-audit" class="stage-panel" aria-labelledby="audit-heading" hidden>
+          <div class="panel-topline"><span class="panel-kicker">03 / Audit</span><span class="fictional-chip">Simulated attacks</span></div>
+          <h2 id="audit-heading" tabindex="-1">Change the record.<br>Leave a trace?</h2><p class="panel-description">An operator can publish a smaller, mathematically valid tally. Earlier evidence can reveal what's missing.</p>
+
+          <div class="witness-diagram" aria-label="A modeled observer retains an earlier election record separately from the operator's published record"><div class="diagram-node operator-node"><span class="node-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><ellipse cx="14" cy="7" rx="9" ry="4"/><path d="M5 7v14c0 5 18 5 18 0V7M5 14c0 5 18 5 18 0"/></svg></span><strong>Operator</strong><small>Publishes a record</small></div><div class="diagram-arrow" aria-hidden="true"><span></span><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14M7 6l-4 4 4 4m6-8 4 4-4 4"/></svg><span></span></div><div class="diagram-node witness-node"><span class="node-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="m14 3 10 5v8c0 6-10 9-10 9S4 22 4 16V8Z"/><path d="m9 14 3 3 7-7"/></svg></span><strong>Modeled witness</strong><small>Retains an earlier record</small></div></div>
+          <p class="diagram-caption">Both roles run on this server. This models evidence comparison; it does <strong>not</strong> demonstrate independent administration.</p>
+
+          <div class="attack-options"><button id="attack-delete" class="attack-option" type="button" disabled><span class="attack-number">A</span><span><strong>Delete an observed ballot</strong><small>Remove an accepted ballot after a witness retained the full record.</small></span><span class="attack-arrow" aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></button><button id="attack-suppress" class="attack-option" type="button" disabled><span class="attack-number">B</span><span><strong>Suppress before observation</strong><small>In a separate scenario, omit a ballot before any trustworthy party sees it.</small></span><span class="attack-arrow" aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></button></div>
+          <div id="audit-result" class="result-card audit-result" role="status" hidden><span id="audit-symbol" class="result-symbol" aria-hidden="true">!</span><div><p id="audit-label" class="result-kicker"></p><h3 id="audit-title"></h3><p id="audit-summary"></p><dl class="audit-facts"><div><dt>What exposed it</dt><dd id="audit-evidence"></dd></div><div><dt>Who must remain trustworthy</dt><dd id="audit-trust"></dd></div><div><dt>Without retained evidence</dt><dd id="audit-ablation"></dd></div></dl><ul id="audit-errors" hidden></ul></div></div>
+          <p class="audit-caveat">These are live local checks of synthetic records, not a promise that attacks can be prevented.</p>
+          <div class="restart-row"><button id="restart-button" class="text-button" type="button">Start a new fictional election <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a7 7 0 1 1 0 6M4 3v5h5"/></svg></span></button><a class="inline-link" href="/research/witness-002">See all 20 research outcomes <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></a></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="limits-section" aria-labelledby="limits-heading"><div class="limits-intro"><p class="eyebrow">The part that matters</p><h2 id="limits-heading">Proof has limits.</h2><p>Cryptography can expose inconsistent evidence. It cannot make an unsafe voting environment safe.</p><a class="inline-link" href="/research/limitations">Read the threat model <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></a></div><div class="limits-content"><div class="honesty-card"><span class="honesty-dot" aria-hidden="true"></span><div><strong>Independent custody: inconclusive.</strong><p>The local shared-account isolation test failed. Real protection needs honest observers, separately authenticated keys, and evidence the operator cannot erase.</p></div></div><div class="risk-grid"><div><span>01</span><strong>Compromised phones</strong><p>A device can change a vote or reveal it.</p></div><div><span>02</span><strong>Coercion &amp; vote buying</strong><p>A receipt does not remove pressure or prevent every form of proof.</p></div><div><span>03</span><strong>Unseen suppression</strong><p>No trusted observation means no evidence of what was omitted.</p></div><div><span>04</span><strong>Denial of service</strong><p>Proofs cannot keep a service available or give everyone access.</p></div></div></div></section>
+
+    <section class="open-section"><div><p class="eyebrow">Open code. Open questions.</p><h2>Worth exploring.<br><em>Not ready for real elections.</em></h2></div><div class="open-copy"><p>OpenLine Vote builds on ElectionGuard and preserves the negative findings of WITNESS-001 and WITNESS-002. OpenLine authorization showed no additional election-security guarantee.</p><div class="open-links"><a href="https://github.com/terryncew/openline-vote-lab" rel="noreferrer">Explore the source <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></a><a href="/research/research">Read the research <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></a><a href="/research/verification">Verify it yourself <span aria-hidden="true"><svg class="inline-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 15 15 4M4 4h11v11"/></svg></span></a></div></div></section>
+  </main>
+  <footer class="site-footer"><span>OpenLine Vote <span class="footer-divider">/</span> An open-source research prototype</span><span>Apache-2.0 <span class="footer-divider">·</span> Synthetic. Nonbinding. Experimental.</span></footer>
+</body>
+</html>

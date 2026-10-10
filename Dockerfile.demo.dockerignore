@@ -1,0 +1,29 @@
+# Send only the files the demo image needs. Never send retained witness stores,
+# raw synthetic keys, old release bundles, a local environment, or Git metadata.
+**
+!Dockerfile.demo
+!Dockerfile.demo.dockerignore
+!requirements.lock
+!pyproject.toml
+!LICENSE
+!README.md
+!vote_lab/
+!vote_lab/**
+!docs/
+!docs/**
+!tests/
+!tests/**
+
+# Deny generated files even within the allowed source/documentation trees.
+**/__pycache__/**
+**/*.pyc
+**/*.pyo
+**/.env
+**/*.pem
+**/*.key
+**/signing-key.bin
+**/local-role-stores/**
+
+# Derived provenance references image IDs; it is review evidence, not runtime
+# input, and stays outside the image to avoid a self-referential image hash.
+docs/openline-vote/validation/**

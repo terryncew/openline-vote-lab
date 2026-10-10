@@ -1,0 +1,133 @@
+{
+  "result": "PASS",
+  "scope": "Review-only real local synthetic interactions; not published",
+  "raw_recording": "page@631424c6c728d62601f6caccafdf96b4.webm",
+  "raw_duration_seconds": 83.52,
+  "final_video": "openline-vote-30s.mp4",
+  "final_duration_seconds": 30.0,
+  "visible_edit_disclosure": "Genuine local run | processing shortened",
+  "frame_source": "Selected intervals of the continuous Playwright capture; no substituted success frames",
+  "edited_source_intervals": [
+    {
+      "label": "Fictional choice",
+      "raw_start": 0.41664913200111187,
+      "raw_end": 3.4944347410000773,
+      "edited_seconds": 4
+    },
+    {
+      "label": "Excerpt of genuine processing",
+      "raw_start": 3.5351611120004236,
+      "raw_end": 5.236644321001222,
+      "edited_seconds": 2
+    },
+    {
+      "label": "Actual public receipt",
+      "raw_start": 22.35932249799953,
+      "raw_end": 25.561579373999848,
+      "edited_seconds": 4
+    },
+    {
+      "label": "Actual verification result",
+      "raw_start": 33.041697995000504,
+      "raw_end": 36.647550693000085,
+      "edited_seconds": 4
+    },
+    {
+      "label": "Actual detected deletion",
+      "raw_start": 51.57440051000049,
+      "raw_end": 56.177397204000954,
+      "edited_seconds": 5
+    },
+    {
+      "label": "Actual undetected suppression",
+      "raw_start": 71.19226357700063,
+      "raw_end": 75.7974964240002,
+      "edited_seconds": 5
+    },
+    {
+      "label": "Unsolved risks and custody limitation",
+      "raw_start": 75.97361553700102,
+      "raw_end": 81.37690515500071,
+      "edited_seconds": 6
+    }
+  ],
+  "api_responses": [
+    {
+      "path": "/api/demo/vote",
+      "status": 202
+    },
+    {
+      "path": "/api/demo/verify",
+      "status": 202
+    },
+    {
+      "path": "/api/demo/audit",
+      "status": 202
+    },
+    {
+      "path": "/api/demo/audit",
+      "status": 202
+    }
+  ],
+  "events": [
+    {
+      "event": "Fictional choice selected",
+      "raw_seconds": 3.4944368340002256
+    },
+    {
+      "event": "Real encrypted ballot receipt returned",
+      "raw_seconds": 25.56158237499949
+    },
+    {
+      "event": "Actual ElectionGuard evidence verification passed",
+      "raw_seconds": 36.64755363400036
+    },
+    {
+      "event": "Witnessed deletion detected by actual evidence comparison",
+      "raw_seconds": 56.323971424000774
+    },
+    {
+      "event": "Suppression before observation not detected",
+      "raw_seconds": 75.94134117300018
+    }
+  ],
+  "final_ui_validation": {
+    "viewports": [
+      {
+        "width": 320,
+        "height": 812,
+        "final_verified_no_overflow": true
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "final_verified_no_overflow": true
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "final_verified_no_overflow": true
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "final_verified_no_overflow": true
+      }
+    ],
+    "displayed_tally_matches_actual_verifier": true,
+    "published_ballot_count": 100,
+    "audit_prior_result_hidden_while_working": true,
+    "browser": "Headless Linux Chromium; physical phones and Safari not tested"
+  },
+  "live_results": {
+    "ballot_included": true,
+    "cryptographic_verification": true,
+    "witnessed_deletion": "DETECTED",
+    "pre_observation_suppression": "NOT DETECTED"
+  },
+  "real_custody_status": "INCONCLUSIVE",
+  "shared_account_isolation": "FAILED",
+  "external_requests": 0,
+  "external_api_spending": 0,
+  "recording_tool": "Existing system ffmpeg reused through a local Playwright resolver; no tool download"
+}

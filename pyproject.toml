@@ -1,7 +1,7 @@
 [project]
 name = "openline-vote-lab"
-version = "0.1.2rc1"
-description = "Synthetic-only local research experiment in independently verifiable elections"
+version = "0.2.0rc1"
+description = "OpenLine Vote: a synthetic research demonstration of checkable election evidence"
 requires-python = ">=3.12,<3.13"
 license = "Apache-2.0"
 

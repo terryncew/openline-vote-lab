@@ -1,0 +1,49 @@
+# Local research demonstration. This file does not publish or deploy anything.
+# Build from the repository root: docker build -f Dockerfile.demo -t openline-vote:local .
+FROM python:3.12-slim-bookworm AS dependencies
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+# Git is required only to install ElectionGuard at the exact locked revision.
+# Tested target: Linux x86-64. Binary-wheel availability on other targets is unverified.
+RUN --mount=type=secret,id=build_ca,target=/tmp/build-ca,mode=0444,required=false \
+    if [ -r /tmp/build-ca ]; then \
+      printf 'Acquire::https::CaInfo "/tmp/build-ca";\n' > /etc/apt/apt.conf.d/99-build-ca; \
+    fi \
+    && sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources \
+    && apt-get update \
+    && apt-get install --yes --no-install-recommends git ca-certificates \
+    && rm -rf /var/lib/apt/lists/* /etc/apt/apt.conf.d/99-build-ca
+
+WORKDIR /app
+COPY requirements.lock ./requirements.lock
+RUN --mount=type=secret,id=build_ca,target=/tmp/build-ca,mode=0444,required=false \
+    if [ -r /tmp/build-ca ]; then \
+      export PIP_CERT=/tmp/build-ca GIT_SSL_CAINFO=/tmp/build-ca; \
+    fi \
+    && python -m pip install --no-cache-dir -r requirements.lock \
+    && python -m pip check
+
+FROM dependencies AS runtime
+RUN groupadd --gid 10001 demo \
+    && useradd --uid 10001 --gid demo --no-create-home --shell /usr/sbin/nologin demo \
+    && chown 10001:10001 /app/requirements.lock
+COPY --chown=10001:10001 vote_lab ./vote_lab
+COPY --chown=10001:10001 docs ./docs
+COPY --chown=10001:10001 LICENSE pyproject.toml README.md ./
+
+USER 10001:10001
+EXPOSE 8001
+
+# One process owns ephemeral browser sessions. gevent.pywsgi is already locked;
+# the application runs bounded cryptographic work in native background threads.
+CMD ["python", "-m", "vote_lab.demo_server", "--host", "0.0.0.0", "--port", "8001"]
+
+# Explicit local validation target; test sources are absent from the final demo.
+FROM runtime AS validation
+COPY --chown=10001:10001 tests ./tests
+CMD ["python", "-m", "pytest", "-q", "-p", "no:cacheprovider"]
+
+FROM runtime AS demo
