@@ -1,0 +1,11 @@
+[project]
+name = "openline-vote-lab"
+version = "0.1.2rc1"
+description = "Synthetic-only local research experiment in independently verifiable elections"
+requires-python = ">=3.12,<3.13"
+license = "Apache-2.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"

@@ -25,3 +25,8 @@ build/
 # Logs and local state
 *.log
 *.tmp
+
+# Synthetic election exports and local browser/test outputs
+artifacts/
+.pytest_cache/
+test-results/

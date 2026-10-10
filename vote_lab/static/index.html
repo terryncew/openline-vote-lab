@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A local, synthetic-data research experiment in independently verifiable election records. Not for real voting.">
+  <title>OpenLine Vote Lab · Experimental research</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to experiment</a>
+  <header class="site-header">
+    <div class="shell header-content">
+      <a class="brand" href="/" aria-label="OpenLine Vote Lab home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>OpenLine <strong>Vote Lab</strong></span>
+      </a>
+      <span class="research-badge"><span aria-hidden="true"></span>Experimental research</span>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A fictional election. A checkable result.</p>
+        <h1 id="page-title">See the count.<br><span>Check the evidence.</span></h1>
+        <p class="hero-description">Explore how encrypted ballots and public proofs let observers verify an election record without seeing individual choices.</p>
+        <p class="scope-note">Local demonstration · 100 synthetic voters · No real votes</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-label">PUBLIC EVIDENCE</div>
+        <div class="ballot-stack"><span></span><span></span><span></span></div>
+        <div class="evidence-path"><i></i><i></i><i></i><i></i></div>
+        <div class="verified-symbol">✓</div>
+        <div class="visual-caption">Encrypted ballots → verifiable tally</div>
+      </div>
+    </section>
+
+    <aside class="notice" aria-label="Important research limitations">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <p><strong>This is an experiment, not an election service.</strong> All identities and choices are fake. One local process holds the simulated keys and choices. Public-record secrecy does not mean protection from a compromised device, operator, or coercer.</p>
+    </aside>
+
+    <div id="connection-error" class="message error" role="alert" hidden></div>
+    <div id="activity" class="activity" role="status" aria-live="polite" aria-atomic="true"><span id="activity-text">Connecting to the local experiment…</span></div>
+
+    <section class="election-overview" aria-labelledby="election-title">
+      <div class="election-meta">
+        <p class="eyebrow">Fictional community ballot</p>
+        <h2 id="election-title">Civic Commons</h2>
+        <p>Choose one project for a fictional neighborhood.</p>
+        <div class="meta-chips"><span id="phase-chip" class="chip">Loading</span><span id="mode-chip" class="chip neutral">Baseline authorization</span></div>
+      </div>
+      <div class="election-count">
+        <p><strong id="cast-count">0</strong><span> / <span id="eligible-count">100</span></span></p>
+        <span>encrypted ballots accepted</span>
+        <div class="count-track" aria-hidden="true"><div id="count-bar"></div></div>
+        <p class="election-id">Election ID <code id="election-id">—</code></p>
+      </div>
+    </section>
+
+    <ol class="workflow" aria-label="Experiment stages">
+      <li id="step-cast" class="current"><span>01</span><div><strong>Cast</strong><small>Eligible synthetic voters</small></div></li>
+      <li id="step-tally"><span>02</span><div><strong>Tally</strong><small>Close and publish proofs</small></div></li>
+      <li id="step-verify"><span>03</span><div><strong>Verify</strong><small>Check the public evidence</small></div></li>
+      <li id="step-attack"><span>04</span><div><strong>Challenge</strong><small>Try changing the record</small></div></li>
+    </ol>
+
+    <div class="experiment-grid">
+      <section class="card casting-card" aria-labelledby="cast-title">
+        <div class="card-heading"><span class="section-number">01</span><div><h2 id="cast-title">Cast a simulated ballot</h2><p>One eligible identity. One counted ballot.</p></div></div>
+        <form id="cast-form">
+          <label class="field-label" for="voter">Synthetic voter</label>
+          <select id="voter" name="voter_id" required aria-describedby="voter-help"><option value="">Loading voters…</option></select>
+          <p id="voter-help" class="field-help">Already-used identities are marked and cannot vote again.</p>
+          <fieldset id="choice-fieldset">
+            <legend class="field-label">Which fictional project should receive funding?</legend>
+            <label class="choice-card"><input type="radio" name="choice" value="garden" checked><span class="choice-symbol garden-symbol" aria-hidden="true">♧</span><span><strong>Community garden</strong><small>A shared space to grow and gather</small></span><span class="radio-indicator" aria-hidden="true"></span></label>
+            <label class="choice-card"><input type="radio" name="choice" value="library"><span class="choice-symbol library-symbol" aria-hidden="true">▤</span><span><strong>Neighborhood library</strong><small>More books, learning, and quiet space</small></span><span class="radio-indicator" aria-hidden="true"></span></label>
+          </fieldset>
+          <button id="cast-button" class="button primary full-width" type="submit">Encrypt &amp; cast ballot <span class="arrow-icon" aria-hidden="true"></span></button>
+        </form>
+        <div class="card-divider"></div>
+        <div class="simulation-action"><div><strong>Run the full 100-voter experiment</strong><p>Fill the remaining voters with randomized synthetic choices.</p></div><button id="simulate-button" class="button secondary" type="button">Complete 100-voter simulation</button></div>
+        <p id="casting-status" class="field-help">Ballots are encrypted before they enter the public record.</p>
+      </section>
+
+      <section class="card receipt-card" aria-labelledby="receipt-title">
+        <div class="card-heading"><span class="section-number"><span class="arrow-icon" aria-hidden="true"></span></span><div><h2 id="receipt-title">Your inclusion receipt</h2><p>Check that an encrypted ballot is present.</p></div></div>
+        <div id="receipt-empty" class="empty-state"><span class="empty-icon" aria-hidden="true">▤</span><strong>A receipt, without your choice</strong><p>Cast a simulated ballot to get its identifier and hash. These let you check inclusion in the record.</p></div>
+        <div id="receipt-details" hidden>
+          <label class="field-label" for="receipt-select">Simulated receipt</label>
+          <select id="receipt-select"></select>
+          <dl class="receipt-fields"><div><dt>Ballot identifier</dt><dd><code id="receipt-id"></code></dd></div><div><dt>Encrypted ballot hash</dt><dd><code id="receipt-hash"></code></dd></div></dl>
+          <p class="field-help">A hash identifies the encrypted record. It does not reveal which project the voter selected.</p>
+          <button id="inclusion-button" class="button secondary full-width" type="button">Check this ballot’s inclusion</button>
+          <div id="inclusion-result" class="message" role="status" aria-live="polite" hidden></div>
+        </div>
+        <div class="small-note"><span aria-hidden="true">⌁</span><p>Inclusion alone does not prove that a device encrypted the voter’s intended choice, or that every eligible person was able to vote.</p></div>
+      </section>
+
+      <section class="card tally-card" aria-labelledby="tally-title">
+        <div class="card-heading"><span class="section-number">02</span><div><h2 id="tally-title">Close the election &amp; tally</h2><p>Reveal the aggregate, not individual ballots.</p></div></div>
+        <p class="card-copy">Complete the 100-voter simulation, then close the election to freeze its record and produce tally evidence. Small or unanimous tallies can reveal choices through the aggregate.</p>
+        <button id="seal-button" class="button primary full-width" type="button">Close &amp; tally election</button>
+        <div id="tally-empty" class="tally-placeholder"><span aria-hidden="true">▥</span><p>The result appears after the election closes.</p></div>
+        <div id="tally-results" hidden>
+          <div class="results-header"><strong>Published result</strong><span id="result-count"></span></div>
+          <div class="result-row"><div><span class="result-dot garden" aria-hidden="true"></span><span>Community garden</span><strong id="garden-total">0</strong></div><div class="result-track"><div id="garden-bar" class="garden"></div></div></div>
+          <div class="result-row"><div><span class="result-dot library" aria-hidden="true"></span><span>Neighborhood library</span><strong id="library-total">0</strong></div><div class="result-track"><div id="library-bar" class="library"></div></div></div>
+          <p class="field-help">Treat these numbers as a claim until the independent checks pass. An aggregate can disclose choices in small or unanimous elections.</p>
+        </div>
+      </section>
+
+      <section class="card verification-card" aria-labelledby="verify-title">
+        <div class="card-heading"><span class="section-number">03</span><div><h2 id="verify-title">Verify the public evidence</h2><p>The verifier checks the record, not the operator’s word.</p></div></div>
+        <p class="card-copy">Check eligibility, uniqueness, ballot proofs, the frozen record, and tally proofs against a separately retained trust anchor and witness checkpoint.</p>
+        <button id="verify-button" class="button primary full-width" type="button">Run independent verification <span aria-hidden="true">✓</span></button>
+        <div id="verification-empty" class="verification-placeholder"><span class="status-dot" aria-hidden="true"></span><p>Close the election to enable verification.</p></div>
+        <div id="verification-result" class="verification-result" role="status" aria-live="polite" hidden><h3 id="verification-heading"></h3><p id="verification-summary"></p><ul id="verification-checks" class="check-list"></ul><ul id="verification-errors" class="error-list" hidden></ul></div>
+        <div class="small-note"><span aria-hidden="true">⌁</span><p>“Independent” means a separate verification path and saved evidence. This demo still runs all roles on one machine; it does not establish real trustee independence.</p></div>
+      </section>
+    </div>
+
+    <section class="card attack-card" aria-labelledby="attack-title">
+      <div class="attack-intro"><div class="card-heading"><span class="section-number orange">04</span><div><h2 id="attack-title">Challenge the election record</h2><p>Change the evidence. See what the verifier catches.</p></div></div><p class="card-copy">Each experiment mutates a copy of the sealed record and runs the verifier again. The reference election remains available for comparison.</p></div>
+      <div class="attack-controls"><label class="field-label" for="attack">Adversarial experiment</label><div class="inline-control"><select id="attack"><option value="duplicate">Duplicate a ballot</option><option value="unauthorized">Insert an unauthorized ballot</option><option value="deleted">Delete a counted ballot</option><option value="modified">Modify an encrypted ballot</option><option value="invalid-proof">Invalid proof with re-signed wrappers</option><option value="operator-retally">Retally a valid subset</option><option value="operator-forgery">Operator forges a voter ballot</option><option value="checkpoint-rewrite">Forge a witness checkpoint</option></select><button id="attack-button" class="button attack-button" type="button">Run attack <span class="arrow-icon" aria-hidden="true"></span></button></div><p id="attack-help" class="field-help">A copied ballot should fail uniqueness and record-integrity checks.</p></div>
+      <div id="attack-result" class="attack-result" role="status" aria-live="polite" hidden><div><span id="attack-result-icon" class="attack-result-icon" aria-hidden="true"></span><h3 id="attack-result-title"></h3></div><p id="attack-result-explanation"></p><ul id="attack-errors" class="error-list"></ul></div>
+    </section>
+
+    <section class="export-section" aria-labelledby="export-title">
+      <div><p class="eyebrow">Take the evidence with you</p><h2 id="export-title">Verify outside the browser</h2><p>Download the record and run the documented local verification command. Retain the anchor and checkpoint separately; replacing all evidence together weakens what a verifier can establish.</p><p class="field-help">Receipts are local synthetic voter data, exported separately from the public record.</p></div>
+      <div class="export-actions"><a id="export-record" class="download-link" href="/api/export/record" download aria-disabled="true"><span><strong>Public election record</strong><small>Encrypted ballots and proofs</small></span><span aria-hidden="true">↓</span></a><a id="export-anchor" class="download-link" href="/api/export/anchor" download aria-disabled="true"><span><strong>Trust anchor</strong><small>Expected election and verification keys</small></span><span aria-hidden="true">↓</span></a><a id="export-checkpoint" class="download-link" href="/api/export/checkpoint" download aria-disabled="true"><span><strong>Witness checkpoint</strong><small>Retained evidence of the frozen record</small></span><span aria-hidden="true">↓</span></a><a id="export-receipts" class="download-link" href="/api/export/receipts" download aria-disabled="true"><span><strong>Synthetic voter receipts</strong><small>Ballot inclusion identifiers and hashes</small></span><span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="research-section" aria-labelledby="limits-title">
+      <div><p class="eyebrow">Evidence has boundaries</p><h2 id="limits-title">What this experiment cannot solve</h2><p>Cryptographic checks expose certain inconsistent records. They cannot make an unsafe voting environment safe.</p></div>
+      <div class="limits-grid"><article><h3>Compromised devices</h3><p>A malicious device can change a choice before encryption or expose it. This lab has no cast-as-intended mechanism.</p></article><article><h3>Coercion &amp; vote buying</h3><p>A valid record does not prove that a voter acted freely. This prototype provides no coercion resistance.</p></article><article><h3>Denial of service</h3><p>Verification cannot restore access for voters who were blocked, excluded, or unable to participate.</p></article><article><h3>Compromised authorities</h3><p>Eligibility and secrecy depend on which keys and roles are compromised. Signed records prove possession of keys, not honest conduct.</p></article></div>
+    </section>
+
+    <section class="experiment-settings" aria-labelledby="settings-title">
+      <div><h2 id="settings-title">Compare authorization models</h2><p>Start a fresh synthetic election with baseline voter signatures or modeled receiver-owned authorization. The optional model is an experiment, not an integration with a formal OpenLine protocol. The research report evaluates the difference.</p></div>
+      <form id="reset-form"><label class="field-label" for="mode">Authorization model</label><div class="inline-control"><select id="mode"><option value="baseline">Baseline voter signatures</option><option value="receiver">Receiver-owned authorization</option></select><button id="reset-button" class="button secondary" type="submit">New experiment</button></div><p class="field-help">Creates new fake keys and discards the current in-memory election.</p></form>
+    </section>
+  </main>
+
+  <footer class="shell site-footer"><span>OpenLine Vote Lab <span aria-hidden="true">/</span> Research release candidate</span><p>Fictional · Nonbinding · Local only · $0 external API budget</p></footer>
+
+  <dialog id="reset-dialog" aria-labelledby="reset-dialog-title" aria-describedby="reset-dialog-description"><h2 id="reset-dialog-title">Start a new experiment?</h2><p id="reset-dialog-description">This discards the current in-memory synthetic election. Download any evidence you want to retain first.</p><div class="dialog-actions"><button id="reset-cancel" class="button secondary" type="button">Keep current election</button><button id="reset-confirm" class="button primary" type="button">Start new experiment</button></div></dialog>
+</body>
+</html>
